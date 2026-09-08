@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gaurav Kumar — SEO &amp; Digital Marketing Specialist</title>
+<meta name="description" content="SEO &amp; Digital Marketing portfolio of Gaurav Kumar — technical SEO, local search, content architecture and evidence-led case studies.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg: #0B1220;
+    --surface: #121A2C;
+    --surface-2: #1A2438;
+    --line: #26314A;
+    --ink: #E9EDF5;
+    --ink-dim: #9AA6BC;
+    --accent: #7FE0C8;
+    --accent-2: #E7B75F;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--bg);
+    color:var(--ink);
+    font-family:'Inter',system-ui,sans-serif;
+    line-height:1.55;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3{
+    font-family:'Fraunces',serif;
+    font-weight:500;
+    margin:0 0 .4em 0;
+    letter-spacing:-.01em;
+  }
+  img{max-width:100%;display:block;}
+  a{color:inherit;}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 28px;}
+  section{padding:96px 0;border-bottom:1px solid var(--line);}
+  section:last-of-type{border-bottom:none;}
+
+  /* Header / nav */
+  header{
+    position:sticky;top:0;z-index:20;
+    background:rgba(11,18,32,.85);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--line);
+  }
+  header .wrap{
+    display:flex;align-items:center;justify-content:space-between;
+    padding:16px 28px;
+  }
+  .brand{font-family:'Fraunces',serif;font-size:1.05rem;font-weight:600;}
+  nav{display:flex;gap:28px;}
+nav a{font-size:.92rem;color:var(--ink);text-decoration:none;margin-left:28px;font-weight:700;}
+  nav a:first-child{margin-left:0;}
+  nav a:hover{color:var(--ink);}
+  @media (max-width:720px){ nav{display:none;} }
+
+  /* Hero */
+  .hero{padding:110px 0 90px;}
+  .hero .kicker{color:var(--accent);font-size:1rem;margin-bottom:18px;}
+  .hero h1{font-size:clamp(2.4rem,5vw,3.6rem);max-width:16ch;}
+  .hero p.lead{
+    color:var(--ink-dim);font-size:1.15rem;max-width:52ch;margin-top:18px;
+  }
+  .hero .meta{
+    margin-top:34px;display:flex;flex-wrap:wrap;gap:10px 22px;
+    color:var(--ink-dim);font-size:.95rem;
+  }
+  .hero .meta > *{margin-right:22px;}
+  .hero .meta > *:last-child{margin-right:0;}
+  .hero .meta a{color:var(--ink);text-decoration:none;border-bottom:1px solid var(--accent);}
+
+  .stat-row{
+    display:grid;grid-template-columns:repeat(4,1fr);gap:1px;
+    background:var(--line);border:1px solid var(--line);
+    margin-top:56px;border-radius:10px;overflow:hidden;
+  }
+  .stat-row .stat{background:var(--surface);padding:26px 22px;}
+  .stat .num{font-family:'Fraunces',serif;font-size:2rem;color:var(--accent);}
+  .stat .lbl{color:var(--ink-dim);font-size:.88rem;margin-top:4px;}
+  @media (max-width:720px){ .stat-row{grid-template-columns:repeat(2,1fr);} }
+
+  /* Section headings */
+  .section-head{max-width:640px;margin-bottom:52px;}
+  .section-head h2{font-size:clamp(1.7rem,3vw,2.3rem);}
+  .section-head p{color:var(--ink-dim);font-size:1.05rem;}
+
+  /* Capabilities */
+  .cap-grid{
+    display:grid;grid-template-columns:repeat(4,1fr);gap:22px;
+  }
+  .cap-card{
+    background:var(--surface);border:1px solid var(--line);
+    border-radius:10px;padding:24px 22px;
+  }
+  .cap-card h3{font-size:1.02rem;font-family:'Inter',sans-serif;font-weight:600;margin-bottom:14px;}
+  .cap-card ul{margin:0;padding-left:18px;color:var(--ink-dim);font-size:.92rem;}
+  .cap-card li{margin-bottom:7px;}
+  @media (max-width:900px){ .cap-grid{grid-template-columns:repeat(2,1fr);} }
+  @media (max-width:560px){ .cap-grid{grid-template-columns:1fr;} }
+
+  /* Timeline */
+  .timeline{border-left:1px solid var(--line);margin-left:6px;padding-left:32px;}
+  .tl-item{position:relative;padding-bottom:38px;}
+  .tl-item:last-child{padding-bottom:0;}
+  .tl-item::before{
+    content:'';position:absolute;left:-38px;top:4px;width:9px;height:9px;
+    border-radius:50%;background:var(--accent);
+  }
+  .tl-item .role{font-weight:600;font-size:1.05rem;}
+  .tl-item .org{color:var(--accent-2);font-size:.92rem;margin-top:2px;}
+  .tl-item .when{color:var(--ink-dim);font-size:.85rem;margin-top:2px;}
+  .tl-item p{color:var(--ink-dim);margin-top:8px;font-size:.95rem;max-width:56ch;}
+
+  /* Impact stat grid */
+  .impact-grid{
+    display:grid;grid-template-columns:repeat(4,1fr);gap:1px;
+    background:var(--line);border:1px solid var(--line);border-radius:10px;overflow:hidden;
+  }
+  .impact-grid .stat{background:var(--surface);padding:28px 20px;}
+  .impact-grid .num{font-family:'Fraunces',serif;font-size:1.9rem;color:var(--ink);}
+  .impact-grid .lbl{color:var(--accent);font-size:.85rem;margin-top:6px;}
+  .impact-grid .ctx{color:var(--ink-dim);font-size:.8rem;margin-top:8px;}
+  @media (max-width:900px){ .impact-grid{grid-template-columns:repeat(2,1fr);} }
+
+  /* Case studies */
+  .case{
+    display:grid;grid-template-columns:1fr 1fr;gap:44px;
+    padding:44px 0;border-top:1px solid var(--line);
+    align-items:start;
+  }
+  .case:first-of-type{border-top:none;}
+  .case .shots{display:grid;gap:14px;}
+  .case .shots img{border-radius:8px;border:1px solid var(--line);}
+  .case .tag{color:var(--accent-2);font-size:.85rem;margin-bottom:10px;}
+  .case h3{font-size:1.35rem;max-width:24ch;}
+  .case .obj{color:var(--ink-dim);margin-top:10px;font-size:.98rem;}
+  .case .work-list{margin:18px 0 0;padding-left:18px;color:var(--ink-dim);font-size:.92rem;}
+  .case .work-list li{margin-bottom:6px;}
+  .case .result{
+    margin-top:20px;background:var(--surface);border:1px solid var(--line);
+    border-radius:8px;padding:16px 18px;font-size:.95rem;
+  }
+  .case .result strong{color:var(--accent);}
+  .case .evidence{color:var(--ink-dim);font-size:.78rem;margin-top:14px;font-style:italic;}
+  @media (max-width:800px){ .case{grid-template-columns:1fr;} }
+
+  /* Method */
+  .method-list{display:grid;gap:0;}
+  .method-item{
+    display:grid;grid-template-columns:70px 1fr;gap:22px;
+    padding:22px 0;border-top:1px solid var(--line);
+  }
+  .method-item:first-child{border-top:none;}
+  .method-item .idx{font-family:'Fraunces',serif;color:var(--accent);font-size:1.3rem;}
+  .method-item h3{font-size:1.05rem;font-family:'Inter',sans-serif;font-weight:600;margin-bottom:4px;}
+  .method-item p{color:var(--ink-dim);font-size:.94rem;margin:0;}
+
+  /* Industries */
+  .industry-grid{
+    display:grid;grid-template-columns:repeat(3,1fr);gap:18px;
+  }
+  .industry-card{
+    border:1px solid var(--line);border-radius:10px;padding:20px;background:var(--surface);
+  }
+  .industry-card h3{font-size:.98rem;font-family:'Inter',sans-serif;font-weight:600;}
+  .industry-card p{color:var(--ink-dim);font-size:.88rem;margin-top:6px;}
+  .brand-line{
+    margin-top:30px;color:var(--ink-dim);font-size:.9rem;line-height:1.9;
+    border-top:1px solid var(--line);padding-top:26px;
+  }
+  @media (max-width:800px){ .industry-grid{grid-template-columns:1fr 1fr;} }
+  @media (max-width:520px){ .industry-grid{grid-template-columns:1fr;} }
+
+  /* Channels + tools */
+  .two-col{display:grid;grid-template-columns:1fr 1fr;gap:44px;}
+  @media (max-width:800px){ .two-col{grid-template-columns:1fr;} }
+  .pill-list{display:flex;flex-wrap:wrap;gap:10px;margin-top:16px;}
+  .pill{
+    border:1px solid var(--line);border-radius:999px;padding:7px 14px;
+    font-size:.85rem;color:var(--ink-dim);
+  }
+
+  /* Contact / footer */
+  footer{padding:80px 0 60px;}
+  footer h2{font-size:clamp(1.8rem,4vw,2.6rem);max-width:14ch;}
+  footer .contact-row{
+    margin-top:26px;display:flex;flex-wrap:wrap;gap:14px 30px;
+    font-size:1.05rem;
+  }
+  footer .contact-row > *{margin-right:30px;}
+  footer .contact-row > *:last-child{margin-right:0;}
+  footer .contact-row a{text-decoration:none;border-bottom:1px solid var(--accent);}
+  footer .note{margin-top:50px;color:var(--ink-dim);font-size:.82rem;}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <div class="brand">Gaurav Kumar</div>
+    <nav>
+      <a href="#work">Work</a>
+      <a href="#capabilities">Capabilities</a>
+      <a href="#experience">Experience</a>
+      <a href="#method">Method</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <div class="kicker">SEO &amp; Digital Marketing Specialist</div>
+    <h1>I build search visibility through evidence, not guesswork.</h1>
+    <p class="lead">Technical and on-page SEO, content architecture, local search and discovery channels four years of documented results across 20+ brands and agency accounts.</p>
+    <div class="meta">
+      <span>New Delhi, India</span>
+      <a href="mailto:gauravk.digital@gmail.com">gauravk.digital@gmail.com</a>
+      <a href="https://linkedin.com/in/gaurav-kumar-9723aa193" target="_blank" rel="noopener">LinkedIn</a>
+    </div>
+    <div class="stat-row">
+      <div class="stat"><div class="num">4+</div><div class="lbl">Years of experience</div></div>
+      <div class="stat"><div class="num">20+</div><div class="lbl">Brands / accounts</div></div>
+      <div class="stat"><div class="num">19.9×</div><div class="lbl">Documented click growth</div></div>
+      <div class="stat"><div class="num">252K</div><div class="lbl">Organic clicks / 16 months</div></div>
+    </div>
+  </div>
+</section>
+
+<section id="capabilities">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>What I actually work on</h2>
+      <p>The portfolio prioritizes capabilities that are backed by CV and project evidence not a generic skills list.</p>
+    </div>
+    <div class="cap-grid">
+      <div class="cap-card">
+        <h3>Search</h3>
+        <ul>
+          <li>Technical &amp; on-page SEO</li>
+          <li>Keyword + competitor research</li>
+          <li>Internal linking &amp; site architecture</li>
+          <li>Website audits &amp; SEO reporting</li>
+        </ul>
+      </div>
+      <div class="cap-card">
+        <h3>Local</h3>
+        <ul>
+          <li>Google Business Profile</li>
+          <li>Location-specific landing pages</li>
+          <li>Local SERP visibility</li>
+          <li>Map / Image Pack / AI Overview work</li>
+        </ul>
+      </div>
+      <div class="cap-card">
+        <h3>Content</h3>
+        <ul>
+          <li>SEO content &amp; blog clusters</li>
+          <li>FAQs + footer content</li>
+          <li>Web Stories / Google Discover</li>
+          <li>Quora, Medium &amp; Pinterest</li>
+        </ul>
+      </div>
+      <div class="cap-card">
+        <h3>Paid</h3>
+        <ul>
+          <li>Meta Ads campaign setup</li>
+          <li>Audience segmentation</li>
+          <li>Creative testing</li>
+          <li>Budget &amp; performance monitoring</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="experience">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Experience timeline</h2>
+      <p>Progression from content, into SEO, into broader digital marketing.</p>
+    </div>
+    <div class="timeline">
+      <div class="tl-item">
+        <div class="role">Content Writer</div>
+        <div class="org">Technofizi Solutions</div>
+        <div class="when">2021</div>
+        <p>Web content, readability and structure.</p>
+      </div>
+      <div class="tl-item">
+        <div class="role">SEO Intern</div>
+        <div class="org">Domyshoot.com</div>
+        <div class="when">2023</div>
+        <p>Keyword research, on-page SEO, foundational off-page work.</p>
+      </div>
+      <div class="tl-item">
+        <div class="role">Digital Marketing Executive</div>
+        <div class="org">Belly Fit Food &amp; Beverages</div>
+        <div class="when">Jun–Aug 2023</div>
+        <p>Day-to-day digital marketing support.</p>
+      </div>
+      <div class="tl-item">
+        <div class="role">SEO Executive</div>
+        <div class="org">Social Eyes Pvt Ltd</div>
+        <div class="when">Oct 2023–Feb 2025</div>
+        <p>SEO execution across multi-industry accounts.</p>
+      </div>
+      <div class="tl-item">
+        <div class="role">Digital Marketing Specialist</div>
+        <div class="org">Social Eyes Pvt Ltd</div>
+        <div class="when">Mar 2025–Present</div>
+        <p>SEO + Meta Ads, local SEO, reporting and optimization.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Selected proof at a glance</h2>
+      <p>The strongest documented outcomes across the current source set.</p>
+    </div>
+    <div class="impact-grid">
+      <div class="stat"><div class="num">18.8K</div><div class="lbl">Google Search clicks</div><div class="ctx">Food / restaurant brand</div></div>
+      <div class="stat"><div class="num">824K</div><div class="lbl">GSC impressions</div><div class="ctx">Food / restaurant brand</div></div>
+      <div class="stat"><div class="num">252K</div><div class="lbl">Organic clicks</div><div class="ctx">Fashion / textiles · 16 months</div></div>
+      <div class="stat"><div class="num">25.7M</div><div class="lbl">GSC impressions</div><div class="ctx">Fashion / textiles · 16 months</div></div>
+      <div class="stat"><div class="num">12,430</div><div class="lbl">GBP interactions</div><div class="ctx">Restaurant outlet · Feb–Jun 2026</div></div>
+      <div class="stat"><div class="num">9,192</div><div class="lbl">Direction requests</div><div class="ctx">Restaurant outlet · Feb–Jun 2026</div></div>
+      <div class="stat"><div class="num">21K+</div><div class="lbl">Web Story views</div><div class="ctx">Agency site · reported month</div></div>
+      <div class="stat"><div class="num">111K+</div><div class="lbl">Quora profile views</div><div class="ctx">Fashion / retail client</div></div>
+    </div>
+  </div>
+</section>
+
+<section id="work">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Case studies</h2>
+      <p>Documented before/after results, with screenshots as evidence rather than decoration.</p>
+    </div>
+
+    <div class="case">
+      <div class="shots">
+        <img src="images/image1.png" alt="Google Search Console clicks and impressions chart, before and after, food and restaurant brand">
+        <img src="images/image2.png" alt="Search performance chart showing growth over time">
+      </div>
+      <div>
+        <div class="tag">Food &amp; Restaurant</div>
+        <h3>Organic search turnaround</h3>
+        <p class="obj">Objective: improve organic visibility and move competitive search terms into stronger positions.</p>
+        <ul class="work-list">
+          <li>Keyword research + competitor analysis</li>
+          <li>On-page and content optimization</li>
+          <li>SEO-focused page / site improvements</li>
+          <li>Link-building and performance monitoring</li>
+        </ul>
+        <div class="result"><strong>944 → 18.8K clicks</strong> · 22.9K → 824K impressions · avg. position 23.6 → 9.8</div>
+        <div class="evidence">Evidence: SEO Achievements file, p.49. Before/after periods are explicitly shown in the source.</div>
+      </div>
+    </div>
+
+    <div class="case">
+      <div class="shots">
+        <img src="images/image3.png" alt="Google Business Profile performance chart">
+        <img src="images/image4.png" alt="Restaurant AI Overview and menu ranking in search results">
+        <img src="images/image5.png" alt="Local map pack listing">
+      </div>
+      <div>
+        <div class="tag">Restaurant chain</div>
+        <h3>Local SEO + search visibility</h3>
+        <p class="obj">Combining location pages, Google Business Profile work and search-result optimization.</p>
+        <ul class="work-list">
+          <li>Location-specific pages, FAQs, footer content</li>
+          <li>Internal linking</li>
+          <li>Site relaunch support</li>
+        </ul>
+        <div class="result"><strong>12,430</strong> GBP interactions · <strong>9,192</strong> direction requests (Feb–Jun 2026, one outlet)</div>
+        <div class="evidence">Search visibility evidence: Image Pack / Local search and AI Overview examples.</div>
+      </div>
+    </div>
+
+    <div class="case">
+      <div class="shots">
+        <img src="images/image6.png" alt="Website relaunch layout comparison for restaurant chain">
+      </div>
+      <div>
+        <div class="tag">Restaurant website relaunch</div>
+        <h3>Competing on organic traffic</h3>
+        <p class="obj">The work combined site structure, location intent and content architecture.</p>
+        <ul class="work-list">
+          <li>Reworked website layout</li>
+          <li>Created location-specific city pages</li>
+          <li>Built page / footer content</li>
+          <li>Added FAQ and internal-linking structures</li>
+        </ul>
+        <div class="result"><strong>35% vs 9%</strong> organic traffic share vs. primary competitor, within 5 months</div>
+        <div class="evidence">Evidence: implementation screenshots from the SEO Achievements file, p.25; result documented in the 2026 CV.</div>
+      </div>
+    </div>
+
+    <div class="case">
+      <div class="shots">
+        <img src="images/image7.png" alt="Google Search Console performance chart, fashion and textiles brand">
+        <img src="images/image8.png" alt="Quora profile views and content stats">
+      </div>
+      <div>
+        <div class="tag">Fashion &amp; Textiles</div>
+        <h3>Organic + off-page distribution</h3>
+        <p class="obj">A combined search and referral approach across Google, Quora and Pinterest.</p>
+        <ul class="work-list">
+          <li>Search-driven content and on-page optimization</li>
+          <li>Quora profile / content distribution</li>
+          <li>Pinterest image submissions for additional reach</li>
+        </ul>
+        <div class="result"><strong>252K</strong> organic clicks · <strong>25.7M</strong> impressions over 16 months · <strong>111K+</strong> Quora profile views · <strong>2,400+</strong> website referrals / 90 days</div>
+        <div class="evidence">Evidence: SEO Achievements file, pp.8 &amp; 11.</div>
+      </div>
+    </div>
+
+    <div class="case">
+      <div class="shots">
+        <img src="images/image9.png" alt="Google Search Console and Analytics dashboard for agency website">
+        <img src="images/image10.png" alt="Web Story performance stats">
+      </div>
+      <div>
+        <div class="tag">In-house agency growth</div>
+        <h3>SEO + Web Stories</h3>
+        <p class="obj">Using the agency website as a practical testbed for organic and discovery-led growth.</p>
+        <ul class="work-list">
+          <li>Website restructuring, location pages, UAE pages</li>
+          <li>Footer content</li>
+          <li>Web Stories</li>
+        </ul>
+        <div class="result"><strong>+114.9%</strong> organic-search new users · <strong>+806%</strong> referral traffic · <strong>21K+</strong> Web Story views, 19K users (Feb 7–Mar 10)</div>
+        <div class="evidence">Evidence: SEO Achievements file, pp.40–41.</div>
+      </div>
+    </div>
+
+    <div class="case">
+      <div class="shots">
+        <img src="images/image11.png" alt="NGO website service and event page layouts">
+      </div>
+      <div>
+        <div class="tag">NGO / Social Impact</div>
+        <h3>Content architecture for organic visibility</h3>
+        <p class="obj">A structure-first SEO approach across service, event, FAQ and footer content.</p>
+        <ul class="work-list">
+          <li>Health &amp; Well-Being service page</li>
+          <li>Disability Inclusion service page</li>
+          <li>Event page layouts, keyword-rich FAQs</li>
+          <li>SEO-friendly footer content, internal linking</li>
+        </ul>
+        <div class="result"><strong>6+</strong> SEO-focused pages built · <strong>83.2K</strong> monthly Pinterest views</div>
+        <div class="evidence">Evidence: SEO Achievements file, p.34; page-layout work documented across pp.31–34.</div>
+      </div>
+    </div>
+
+    <div class="case">
+      <div class="shots">
+        <img src="images/image12.png" alt="Organic traffic growth chart for personal project">
+        <img src="images/image13.png" alt="Google Discover visitor stats">
+      </div>
+      <div>
+        <div class="tag">Personal project — Informative Gyan</div>
+        <h3>Building SEO from zero</h3>
+        <p class="obj">A personal project demonstrating end-to-end ownership of website, content and acquisition.</p>
+        <ul class="work-list">
+          <li>WordPress site built from scratch</li>
+          <li>Keyword + competitor research, on-page SEO, site architecture</li>
+          <li>Link building / guest posting</li>
+          <li>100% of content authored and published independently</li>
+        </ul>
+        <div class="result"><strong>28K</strong> monthly organic traffic within one year · <strong>19K+</strong> unique Google Discover visitors in 25 days via SEO-optimized Web Stories</div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section id="method">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>How I approach an SEO problem</h2>
+      <p>A repeatable workflow that connects research, implementation and measurement.</p>
+    </div>
+    <div class="method-list">
+      <div class="method-item">
+        <div class="idx">1</div>
+        <div><h3>Discover</h3><p>Audit, search intent, competitors, GSC/GA baseline.</p></div>
+      </div>
+      <div class="method-item">
+        <div class="idx">2</div>
+        <div><h3>Architect</h3><p>Page types, URL / location structure, internal links, content gaps.</p></div>
+      </div>
+      <div class="method-item">
+        <div class="idx">3</div>
+        <div><h3>Optimize</h3><p>Metadata, content, FAQs, footer, technical fixes, Google Business Profile.</p></div>
+      </div>
+      <div class="method-item">
+        <div class="idx">4</div>
+        <div><h3>Distribute</h3><p>Link building, Quora, Pinterest, Web Stories where relevant.</p></div>
+      </div>
+      <div class="method-item">
+        <div class="idx">5</div>
+        <div><h3>Measure</h3><p>GSC/GA, rankings, SERP features, referrals, profile interactions.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Multi-industry agency experience</h2>
+      <p>Breadth matters because SEO problems change with search intent, business model and local or technical constraints.</p>
+    </div>
+    <div class="industry-grid">
+      <div class="industry-card"><h3>Food &amp; Restaurants</h3><p>Local SEO, location pages, GBP, content</p></div>
+      <div class="industry-card"><h3>Fashion &amp; Textiles</h3><p>Organic search, Quora, Pinterest, content</p></div>
+      <div class="industry-card"><h3>Packaging &amp; Industrial</h3><p>B2B SEO, GSC monitoring, ongoing optimization</p></div>
+      <div class="industry-card"><h3>Healthcare &amp; Wellness</h3><p>Content structure, service pages, search visibility</p></div>
+      <div class="industry-card"><h3>NGO / Social Impact</h3><p>Service and event pages, FAQs, internal linking</p></div>
+      <div class="industry-card"><h3>Home / Building / Interiors</h3><p>Technical + on-page, international / UK exposure</p></div>
+      <div class="industry-card"><h3>Education</h3><p>Content-led visibility, local / service intent</p></div>
+      <div class="industry-card"><h3>Lighting &amp; Electrical</h3><p>Search optimization, product / service visibility</p></div>
+      <div class="industry-card"><h3>Beauty / Lifestyle / Aviation</h3><p>Multi-industry SEO execution</p></div>
+    </div>
+    <div class="brand-line">
+      Brands worked with: Surya Roshni, Sita Ram Diwan Chand, The Golden Tusk, Sahni Fabrics, AERO Digital, Social Eyes, Orthomol USA, Siddh Glazing, Himbuti, SIS Prep, Matrix Windoors, Bag Supply.
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap two-col">
+    <div>
+      <div class="section-head" style="margin-bottom:20px;">
+        <h2>Paid media</h2>
+        <p>Meta Ads is a current hands-on capability; Google Ads remains foundational and still developing.</p>
+      </div>
+      <div class="cap-card" style="margin-bottom:16px;">
+        <h3>Meta Ads </h3>
+        <ul>
+          <li>Campaign setup &amp; optimization</li>
+          <li>Audience segmentation</li>
+          <li>Creative testing</li>
+          <li>Budget monitoring / ROAS tracking</li>
+        </ul>
+      </div>
+      <div class="cap-card">
+        <h3>Google Ads </h3>
+        <ul>
+          <li>Search campaign structure</li>
+          <li>Keyword planning</li>
+          <li>Currently building hands-on depth</li>
+        </ul>
+      </div>
+    </div>
+    <div>
+      <div class="section-head" style="margin-bottom:20px;">
+        <h2>Tools &amp; platforms</h2>
+        <p>Grounded in daily use across SEO, local and content distribution work.</p>
+      </div>
+      <div class="pill-list">
+        <span class="pill">Google Search Console</span>
+        <span class="pill">Google Analytics / GA4</span>
+        <span class="pill">SEMrush</span>
+        <span class="pill">Ahrefs</span>
+        <span class="pill">Moz</span>
+        <span class="pill">Google Business Profile</span>
+        <span class="pill">WordPress</span>
+        <span class="pill">Meta Ads Manager</span>
+        <span class="pill">Pinterest</span>
+        <span class="pill">Quora</span>
+        <span class="pill">Medium</span>
+        <span class="pill">Web Stories</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer id="contact">
+  <div class="wrap">
+    <h2>Let's talk about your search visibility.</h2>
+    <div class="contact-row">
+      <a href="mailto:gauravk.digital@gmail.com">gauravk.digital@gmail.com</a>
+      <a href="https://linkedin.com/in/gaurav-kumar-9723aa193" target="_blank" rel="noopener">linkedin.com/in/gaurav-kumar-9723aa193</a>
+      <span style="color:var(--ink-dim);">New Delhi, India</span>
+    </div>
+    <div class="note">Metrics are shown with their documented reporting periods. Source: 2026 CV and SEO Achievements records.</div>
+  </div>
+</footer>
+
+</body>
+</html>
