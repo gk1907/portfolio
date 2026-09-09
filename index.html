@@ -57,7 +57,29 @@
 nav a{font-size:.92rem;color:var(--ink);text-decoration:none;margin-left:28px;font-weight:700;}
   nav a:first-child{margin-left:0;}
   nav a:hover{color:var(--ink);}
-  @media (max-width:720px){
+.menu-toggle{
+  display:none;
+}
+
+@media (max-width:720px){
+  header .wrap{
+    position:relative;
+  }
+
+  .menu-toggle{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    width:42px;
+    height:42px;
+    border:1px solid var(--line);
+    border-radius:8px;
+    background:transparent;
+    color:var(--ink);
+    cursor:pointer;
+    font-size:22px;
+  }
+
   nav{
     display:none;
     position:absolute;
@@ -68,7 +90,7 @@ nav a{font-size:.92rem;color:var(--ink);text-decoration:none;margin-left:28px;fo
     background:var(--surface);
     border:1px solid var(--line);
     border-radius:10px;
-    padding:10px;
+    padding:8px;
     min-width:190px;
     box-shadow:0 12px 30px rgba(0,0,0,.25);
   }
@@ -85,20 +107,6 @@ nav a{font-size:.92rem;color:var(--ink);text-decoration:none;margin-left:28px;fo
 
   nav a:hover{
     background:var(--surface-2);
-  }
-
-  .menu-toggle{
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    width:42px;
-    height:42px;
-    border:1px solid var(--line);
-    border-radius:8px;
-    background:transparent;
-    color:var(--ink);
-    cursor:pointer;
-    font-size:22px;
   }
 }
 
@@ -259,9 +267,10 @@ nav a{font-size:.92rem;color:var(--ink);text-decoration:none;margin-left:28px;fo
 <header>
   <div class="wrap">
 <a class="brand" href="https://gk1907.github.io/portfolio" aria-label="Go to top">Gaurav Kumar</a>
+    <button class="menu-toggle" type="button" aria-label="Open menu">☰</button>
     <nav>
+     <a href="#capabilities">Skills</a>
       <a href="#experience">Experience</a>
-      <a href="#capabilities">Skills</a>
       <a href="#work">Case Studies</a>
       <a href="#method">Approach</a>
       <a href="#contact">Contact</a>
@@ -860,6 +869,22 @@ nav a{font-size:.92rem;color:var(--ink);text-decoration:none;margin-left:28px;fo
         const categories = card.dataset.category.split(' ');
         card.classList.toggle('is-hidden', filter !== 'all' && !categories.includes(filter));
       });
+    });
+  });
+})();
+</script>
+<script>
+(function(){
+  const menuButton = document.querySelector('.menu-toggle');
+  const nav = document.querySelector('nav');
+
+  menuButton.addEventListener('click', function(){
+    nav.classList.toggle('open');
+  });
+
+  nav.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', function(){
+      nav.classList.remove('open');
     });
   });
 })();
