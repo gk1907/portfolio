@@ -54,7 +54,7 @@
   }
   .brand{font-family:'Fraunces',serif;font-size:1.05rem;font-weight:600;}
   nav{display:flex;gap:28px;}
-  nav a{font-size:.92rem;color:var(--ink-dim);text-decoration:none;margin-left:28px;}
+nav a{font-size:.92rem;color:var(--ink);text-decoration:none;margin-left:28px;font-weight:700;}
   nav a:first-child{margin-left:0;}
   nav a:hover{color:var(--ink);}
   @media (max-width:720px){ nav{display:none;} }
@@ -196,18 +196,31 @@
   footer .contact-row > *:last-child{margin-right:0;}
   footer .contact-row a{text-decoration:none;border-bottom:1px solid var(--accent);}
   footer .note{margin-top:50px;color:var(--ink-dim);font-size:.82rem;}
+
+  /* Case study filters */
+  .case-filters{
+    display:flex;flex-wrap:wrap;gap:10px;margin:-22px 0 34px;
+  }
+  .case-filter{
+    appearance:none;border:1px solid var(--line);background:transparent;color:var(--ink-dim);
+    border-radius:999px;padding:9px 16px;font:600 .88rem 'Inter',system-ui,sans-serif;
+    cursor:pointer;transition:.2s ease;
+  }
+  .case-filter:hover{color:var(--ink);border-color:var(--accent);}
+  .case-filter.active{background:var(--accent);color:var(--bg);border-color:var(--accent);}
+  .case.is-hidden{display:none;}
 </style>
 </head>
-<body>
+<body id="top">
 
 <header>
   <div class="wrap">
-    <div class="brand">Gaurav Kumar</div>
+    <a class="brand" href="#top" aria-label="Go to top">Gaurav Kumar</a>
     <nav>
-      <a href="#work">Work</a>
-      <a href="#capabilities">Capabilities</a>
+      <a href="#work">Case Studies</a>
+      <a href="#capabilities">Skills</a>
       <a href="#experience">Experience</a>
-      <a href="#method">Method</a>
+      <a href="#method">Approach</a>
       <a href="#contact">Contact</a>
     </nav>
   </div>
@@ -217,7 +230,7 @@
   <div class="wrap">
     <div class="kicker">SEO &amp; Digital Marketing Specialist</div>
     <h1>I build search visibility through evidence, not guesswork.</h1>
-    <p class="lead">Technical and on-page SEO, content architecture, local search and discovery channels — four years of documented results across 20+ brands and agency accounts.</p>
+    <p class="lead">Technical and on-page SEO, content architecture, local search and discovery channels four years of documented results across 20+ brands and agency accounts.</p>
     <div class="meta">
       <span>New Delhi, India</span>
       <a href="mailto:gauravk.digital@gmail.com">gauravk.digital@gmail.com</a>
@@ -236,7 +249,7 @@
   <div class="wrap">
     <div class="section-head">
       <h2>What I actually work on</h2>
-      <p>The portfolio prioritizes capabilities that are backed by CV and project evidence — not a generic skills list.</p>
+      <p>The portfolio prioritizes capabilities that are backed by CV and project evidence not a generic skills list.</p>
     </div>
     <div class="cap-grid">
       <div class="cap-card">
@@ -346,7 +359,14 @@
       <p>Documented before/after results, with screenshots as evidence rather than decoration.</p>
     </div>
 
-    <div class="case">
+    <div class="case-filters" role="tablist" aria-label="Filter case studies">
+      <button class="case-filter active" type="button" data-filter="all" role="tab" aria-selected="true">All</button>
+      <button class="case-filter" type="button" data-filter="seo" role="tab" aria-selected="false">SEO</button>
+      <button class="case-filter" type="button" data-filter="local" role="tab" aria-selected="false">Local SEO</button>
+      <button class="case-filter" type="button" data-filter="paid" role="tab" aria-selected="false">Meta Ads</button>
+    </div>
+
+    <div class="case" data-category="seo">
       <div class="shots">
         <img src="images/image1.png" alt="Google Search Console clicks and impressions chart, before and after, food and restaurant brand">
         <img src="images/image2.png" alt="Search performance chart showing growth over time">
@@ -366,7 +386,7 @@
       </div>
     </div>
 
-    <div class="case">
+    <div class="case" data-category="seo local">
       <div class="shots">
         <img src="images/image3.png" alt="Google Business Profile performance chart">
         <img src="images/image4.png" alt="Restaurant AI Overview and menu ranking in search results">
@@ -386,7 +406,7 @@
       </div>
     </div>
 
-    <div class="case">
+    <div class="case" data-category="seo local">
       <div class="shots">
         <img src="images/image6.png" alt="Website relaunch layout comparison for restaurant chain">
       </div>
@@ -405,7 +425,7 @@
       </div>
     </div>
 
-    <div class="case">
+    <div class="case" data-category="seo">
       <div class="shots">
         <img src="images/image7.png" alt="Google Search Console performance chart, fashion and textiles brand">
         <img src="images/image8.png" alt="Quora profile views and content stats">
@@ -424,7 +444,7 @@
       </div>
     </div>
 
-    <div class="case">
+    <div class="case" data-category="seo local">
       <div class="shots">
         <img src="images/image9.png" alt="Google Search Console and Analytics dashboard for agency website">
         <img src="images/image10.png" alt="Web Story performance stats">
@@ -443,7 +463,7 @@
       </div>
     </div>
 
-    <div class="case">
+    <div class="case" data-category="seo">
       <div class="shots">
         <img src="images/image11.png" alt="NGO website service and event page layouts">
       </div>
@@ -462,7 +482,7 @@
       </div>
     </div>
 
-    <div class="case">
+    <div class="case" data-category="seo">
       <div class="shots">
         <img src="images/image12.png" alt="Organic traffic growth chart for personal project">
         <img src="images/image13.png" alt="Google Discover visitor stats">
@@ -478,6 +498,188 @@
           <li>100% of content authored and published independently</li>
         </ul>
         <div class="result"><strong>28K</strong> monthly organic traffic within one year · <strong>19K+</strong> unique Google Discover visitors in 25 days via SEO-optimized Web Stories</div>
+      </div>
+    </div>
+
+
+    <!-- SEO: Sidh Glazing -->
+    <div class="case" data-category="seo">
+      <div class="shots"></div>
+      <div>
+        <div class="tag">SEO · Building Materials / Glazing</div>
+        <h3>Sidh Glazing</h3>
+        <p class="obj">SEO work combining search-performance comparison and Pinterest distribution to expand visibility.</p>
+        <ul class="work-list">
+          <li>SEO performance comparison across a 3-month period</li>
+          <li>Pinterest image distribution</li>
+          <li>Search visibility monitoring and optimization</li>
+        </ul>
+        <div class="result"><strong>35.4K</strong> monthly Pinterest views</div>
+      </div>
+    </div>
+
+    <!-- SEO: AERO Digital -->
+    <div class="case" data-category="seo">
+      <div class="shots"></div>
+      <div>
+        <div class="tag">SEO · Digital Marketing</div>
+        <h3>AERO Digital</h3>
+        <p class="obj">On-page SEO and search-performance work tracked through Google Search Console.</p>
+        <ul class="work-list">
+          <li>On-page optimization</li>
+          <li>Search-performance monitoring</li>
+          <li>Content and keyword-focused improvements</li>
+        </ul>
+        <div class="result"><strong>669</strong> clicks · <strong>177K</strong> impressions · average position <strong>13</strong></div>
+      </div>
+    </div>
+
+    <!-- SEO: Matrix Windoors -->
+    <div class="case" data-category="seo">
+      <div class="shots"></div>
+      <div>
+        <div class="tag">SEO · Home / Building / Interiors</div>
+        <h3>Matrix Windoors</h3>
+        <p class="obj">Discovery-focused content distribution through Web Stories, supported by SEO work.</p>
+        <ul class="work-list">
+          <li>Web Stories</li>
+          <li>Search-oriented content distribution</li>
+          <li>Performance monitoring</li>
+        </ul>
+        <div class="result"><strong>Web Story performance</strong> across the Feb 14–Apr 25, 2024 reporting period</div>
+      </div>
+    </div>
+
+    <!-- SEO: Field Packaging -->
+    <div class="case" data-category="seo">
+      <div class="shots"></div>
+      <div>
+        <div class="tag">SEO · Packaging</div>
+        <h3>Field Packaging</h3>
+        <p class="obj">Search-performance monitoring and ongoing SEO optimization for a packaging business.</p>
+        <ul class="work-list">
+          <li>Google Search Console monitoring</li>
+          <li>On-page SEO and content optimization</li>
+          <li>Performance tracking</li>
+        </ul>
+        <div class="result"><strong>573</strong> clicks · <strong>72.4K</strong> impressions · average position <strong>24.9</strong></div>
+      </div>
+    </div>
+
+    <!-- SEO: Momar Industries -->
+    <div class="case" data-category="seo">
+      <div class="shots"></div>
+      <div>
+        <div class="tag">SEO · Industrial</div>
+        <h3>Momar Industries</h3>
+        <p class="obj">Organic search performance tracked through Google Search Console during the project period.</p>
+        <ul class="work-list">
+          <li>Search-performance monitoring</li>
+          <li>On-page SEO and content optimization</li>
+          <li>Ongoing performance analysis</li>
+        </ul>
+        <div class="result"><strong>956</strong> clicks · <strong>164K</strong> impressions · average position <strong>18.4</strong></div>
+      </div>
+    </div>
+
+    <!-- SEO: Alert Security -->
+    <div class="case" data-category="seo">
+      <div class="shots"></div>
+      <div>
+        <div class="tag">SEO · Security</div>
+        <h3>Alert Security</h3>
+        <p class="obj">Search visibility tracked through Google Search Console across the project period.</p>
+        <ul class="work-list">
+          <li>GSC performance monitoring</li>
+          <li>On-page and content optimization</li>
+          <li>SEO performance reporting</li>
+        </ul>
+        <div class="result"><strong>506</strong> clicks · <strong>81K</strong> impressions · average position <strong>16.8</strong></div>
+      </div>
+    </div>
+
+    <!-- SEO: Primary Packaging -->
+    <div class="case" data-category="seo">
+      <div class="shots"></div>
+      <div>
+        <div class="tag">SEO · Packaging</div>
+        <h3>Primary Packaging</h3>
+        <p class="obj">SEO performance work tracked through Google Search Console.</p>
+        <ul class="work-list">
+          <li>GSC monitoring</li>
+          <li>Search-performance analysis</li>
+          <li>Ongoing SEO optimization</li>
+        </ul>
+        <div class="result"><strong>GSC search performance</strong> tracked from 5 Mar–25 Apr 2025</div>
+      </div>
+    </div>
+
+    <!-- SEO: Bag Supply -->
+    <div class="case" data-category="seo">
+      <div class="shots"></div>
+      <div>
+        <div class="tag">SEO · Packaging</div>
+        <h3>Bag Supply</h3>
+        <p class="obj">Organic search performance tracked through Google Search Console during the documented six-month period.</p>
+        <ul class="work-list">
+          <li>GSC monitoring</li>
+          <li>On-page SEO and content optimization</li>
+          <li>Performance analysis and reporting</li>
+        </ul>
+        <div class="result"><strong>2.91K</strong> clicks · <strong>565K</strong> impressions · average position <strong>17.2</strong></div>
+      </div>
+    </div>
+
+    <!-- Meta Ads: Drive Stylish -->
+    <div class="case" data-category="paid">
+      <div class="shots">
+        <img src="images/drive_perf.png" alt="DriveStylish Meta Ads campaign performance evidence">
+        <img src="images/drive_winners.png" alt="DriveStylish winning ad set evidence">
+        <img src="images/drive_impact.png" alt="DriveStylish follower growth evidence">
+      </div>
+      <div>
+        <div class="tag">Meta Ads · E-commerce / Car Accessories</div>
+        <h3>Drive Stylish</h3>
+        <p class="obj">Instagram Profile Visit campaign designed to turn paid reach into measurable audience growth.</p>
+        <ul class="work-list">
+          <li>Profile Visit campaign objective and Instagram destination</li>
+          <li>9 ad sets tested; 5 delivered</li>
+          <li>Compared profile visits, CTR and CPM</li>
+          <li>Shifted spend toward stronger ad sets</li>
+        </ul>
+        <div class="result"><strong>₹52,719.62</strong> spend · <strong>188,075</strong> profile visits · <strong>+10,522</strong> followers / +78.6% · <strong>₹0.28</strong> cost per profile visit</div>
+      </div>
+    </div>
+
+    <!-- Meta Ads: Sita Ram Diwan Chand -->
+    <div class="case" data-category="paid">
+      <div class="shots"></div>
+      <div>
+        <div class="tag">Meta Ads · Food / Restaurant</div>
+        <h3>Sita Ram Diwan Chand</h3>
+        <p class="obj">Instagram audience growth tracked across the documented December 2025 to August 2026 period.</p>
+        <ul class="work-list">
+          <li>Instagram audience-growth activity</li>
+          <li>Growth tracked from follower snapshots</li>
+          <li>Audience growth from the same profile-growth approach used for the campaign work</li>
+        </ul>
+        <div class="result"><strong>4,301 → 6,848</strong> followers · <strong>+2,547</strong> net followers · <strong>+59.2%</strong> growth</div>
+      </div>
+    </div>
+
+    <!-- Meta Ads: Red Rose -->
+    <div class="case" data-category="paid">
+      <div class="shots"></div>
+      <div>
+        <div class="tag">Meta Ads · Food / Restaurant</div>
+        <h3>Red Rose</h3>
+        <p class="obj">Instagram audience growth tracked across the documented May 2025 to August 2026 period.</p>
+        <ul class="work-list">
+          <li>Instagram audience-growth activity</li>
+          <li>Growth tracked from follower snapshots</li>
+          <li>Audience growth from the same profile-growth approach used for the campaign work</li>
+        </ul>
+        <div class="result"><strong>7,529 → 9,494</strong> followers · <strong>+1,965</strong> net followers · <strong>+26.1%</strong> growth</div>
       </div>
     </div>
 
@@ -546,7 +748,7 @@
         <p>Meta Ads is a current hands-on capability; Google Ads remains foundational and still developing.</p>
       </div>
       <div class="cap-card" style="margin-bottom:16px;">
-        <h3>Meta Ads — beginner–intermediate</h3>
+        <h3>Meta Ads </h3>
         <ul>
           <li>Campaign setup &amp; optimization</li>
           <li>Audience segmentation</li>
@@ -555,7 +757,7 @@
         </ul>
       </div>
       <div class="cap-card">
-        <h3>Google Ads — foundational</h3>
+        <h3>Google Ads </h3>
         <ul>
           <li>Search campaign structure</li>
           <li>Keyword planning</li>
@@ -598,5 +800,26 @@
   </div>
 </footer>
 
+
+<script>
+(function(){
+  const buttons = document.querySelectorAll('.case-filter');
+  const cases = document.querySelectorAll('.case[data-category]');
+  buttons.forEach(button => {
+    button.addEventListener('click', function(){
+      const filter = this.dataset.filter;
+      buttons.forEach(btn => {
+        const active = btn === this;
+        btn.classList.toggle('active', active);
+        btn.setAttribute('aria-selected', active ? 'true' : 'false');
+      });
+      cases.forEach(card => {
+        const categories = card.dataset.category.split(' ');
+        card.classList.toggle('is-hidden', filter !== 'all' && !categories.includes(filter));
+      });
+    });
+  });
+})();
+</script>
 </body>
 </html>
